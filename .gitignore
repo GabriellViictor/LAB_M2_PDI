@@ -1,0 +1,18 @@
+# Arquivos temporarios e metadados do sistema operacional
+.DS_Store
+Thumbs.db
+*.log
+
+# Configuracoes locais de IDE/editor na raiz do pacote
+.idea/
+.vscode/
+
+# Pacotes e artefatos locais que nao fazem parte do projeto-base
+*.zip
+build/
+cmake-build-debug/
+*.exe
+*.dll
+*.a
+*.o
+*.obj

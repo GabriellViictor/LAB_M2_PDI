@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "lab": "m2.2",
+  "stages": [
+    "m2.1",
+    "m2.2"
+  ],
+  "language": "cpp",
+  "student": {
+    "name": "Gabriel Victor Garcia Teixeira",
+    "registration": "7701594"
+  },
+  "contract_version": 2,
+  "project_base_version": "0.3.0"
+}

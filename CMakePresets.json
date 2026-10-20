@@ -1,0 +1,36 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {"major": 3, "minor": 24, "patch": 0},
+  "configurePresets": [
+    {
+      "name": "ucrt64-debug",
+      "displayName": "MSYS2 UCRT64 Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/ucrt64-debug",
+      "cacheVariables": {"CMAKE_BUILD_TYPE": "Debug", "BUILD_TESTING": "ON"}
+    },
+    {
+      "name": "ucrt64-release",
+      "displayName": "MSYS2 UCRT64 Release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/ucrt64-release",
+      "cacheVariables": {"CMAKE_BUILD_TYPE": "Release", "BUILD_TESTING": "ON"}
+    },
+    {
+      "name": "unix-debug",
+      "displayName": "Unix-like Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/unix-debug",
+      "cacheVariables": {"CMAKE_BUILD_TYPE": "Debug", "BUILD_TESTING": "ON"}
+    }
+  ],
+  "buildPresets": [
+    {"name": "ucrt64-debug", "configurePreset": "ucrt64-debug"},
+    {"name": "ucrt64-release", "configurePreset": "ucrt64-release"},
+    {"name": "unix-debug", "configurePreset": "unix-debug"}
+  ],
+  "testPresets": [
+    {"name": "ucrt64-debug", "configurePreset": "ucrt64-debug", "output": {"outputOnFailure": true}},
+    {"name": "unix-debug", "configurePreset": "unix-debug", "output": {"outputOnFailure": true}}
+  ]
+}

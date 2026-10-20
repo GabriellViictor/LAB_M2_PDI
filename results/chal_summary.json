@@ -1,0 +1,16 @@
+{
+  "connectivity": "8",
+  "final_count_filtered": "5",
+  "final_count_raw": "5",
+  "final_foreground_area_filtered": "2557",
+  "final_foreground_area_raw": "2557",
+  "initial_count_conn4_raw": "5",
+  "initial_count_conn8_raw": "5",
+  "initial_count_filtered": "5",
+  "initial_count_raw": "5",
+  "initial_foreground_area_filtered": "2559",
+  "initial_foreground_area_raw": "2559",
+  "min_area": "20",
+  "morph_sequence": "open(ellipse,3x3,it=1) -> close(ellipse,5x5,it=1)",
+  "morph_stages_count": "2"
+}

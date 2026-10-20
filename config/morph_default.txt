@@ -1,0 +1,7 @@
+# Configuracao padrao da sequencia morfologica para o Laboratorio M2.2
+# Formato por linha: <operacao> <forma> <tamanho_kernel> <iteracoes>
+# Operacoes: erode, dilate, open, close
+# Formas: rect, ellipse, cross
+
+open ellipse 3 1
+close ellipse 5 1

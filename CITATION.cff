@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "Se você utilizar este projeto-base em atividades acadêmicas, materiais didáticos ou trabalhos derivados, cite o software usando os metadados abaixo."
+type: software
+title: "PDI Template — Projetos-base para os Laboratórios M1 de Processamento de Imagens"
+authors:
+  - family-names: "Lopes"
+    given-names: "Marcelo Dornbusch"
+    email: "marcelo@univali.br"
+    affiliation: "Universidade do Vale do Itajaí (UNIVALI)"
+version: "0.2.0"
+date-released: 2026-08-18
+license: Apache-2.0
+repository-code: "https://github.com/m4rc3lo/pdi_template"
+keywords:
+  - processamento de imagens
+  - ensino
+  - laboratório
+  - OpenCV
+  - C++
+  - Java
+  - Python
+  - educação em computação
+abstract: >-
+  Projeto-base didático para os laboratórios da M1 da disciplina de
+  Processamento de Imagens. O repositório oferece variantes equivalentes
+  em C++, Java e Python, com infraestrutura comum para construção,
+  execução, validação de parâmetros, entrada e saída de imagens, testes e
+  documentação, preservando para o estudante a implementação dos
+  algoritmos de Processamento de Imagens avaliados.
