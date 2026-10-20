@@ -1,5 +1,5 @@
-# Processamento de Imagens — 2026-02
-## Laboratório M2.2 — Componentes conexos e sequência morfológica
+# Processamento de Imagens - 2026-02
+## Laboratório M2.2 - Componentes conexos e sequência morfológica
 
 ### Objetivo
 

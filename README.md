@@ -1,4 +1,4 @@
-# Laboratórios de Processamento Digital de Imagens — M2 (M2.1 + M2.2)
+# Laboratórios de Processamento Digital de Imagens - M2 (M2.1 + M2.2)
 
 - **Disciplina:** Processamento Digital de Imagens (2026-02)
 - **Estudante:** Gabriel Victor Garcia Teixeira (`7701594`)
@@ -32,7 +32,7 @@ ctest --test-dir cmake-build-debug --output-on-failure
 
 ## 2. Operações da M2
 
-### 2.1. Laboratório M2.1 — Segmentação e Máscara Binária (`--operation segment`)
+### 2.1. Laboratório M2.1 - Segmentação e Máscara Binária (`--operation segment`)
 
 Gera uma máscara binária de 1 canal (`CV_8UC1`) contendo exclusivamente `{0, 255}` (`0` = fundo, `255` = objeto) em formato sem perdas (`PNG`).
 
@@ -48,25 +48,25 @@ Gera uma máscara binária de 1 canal (`CV_8UC1`) contendo exclusivamente `{0, 2
 #### Comandos concretos para reproduzir o estudo M2.1:
 
 ```bash
-# Imagem 1 (Condicao favoravel) — Configuracao 1: Limiar fixo
+# Imagem 1 (Condicao favoravel) - Configuracao 1: Limiar fixo
 ./cmake-build-debug/pdi_lab --input images/input/m2_favorable_objects.png \
   --output images/output/fav_fixed_mask.png \
   --overlay images/output/fav_fixed_overlay.png \
   --operation segment --method fixed --threshold 120
 
-# Imagem 1 (Condicao favoravel) — Configuracao 2: Limiarizacao adaptativa
+# Imagem 1 (Condicao favoravel) - Configuracao 2: Limiarizacao adaptativa
 ./cmake-build-debug/pdi_lab --input images/input/m2_favorable_objects.png \
   --output images/output/fav_adaptive_mask.png \
   --overlay images/output/fav_adaptive_overlay.png \
   --operation segment --method adaptive --block-size 31 --c -15
 
-# Imagem 2 (Condicao desafiadora: gradiente de iluminacao) — Configuracao 1: Limiar fixo
+# Imagem 2 (Condicao desafiadora: gradiente de iluminacao) - Configuracao 1: Limiar fixo
 ./cmake-build-debug/pdi_lab --input images/input/m2_challenging_illumination.png \
   --output images/output/chal_fixed_mask.png \
   --overlay images/output/chal_fixed_overlay.png \
   --operation segment --method fixed --threshold 120
 
-# Imagem 2 (Condicao desafiadora: gradiente de iluminacao) — Configuracao 2: Limiarizacao adaptativa + Gaussiano 3x3
+# Imagem 2 (Condicao desafiadora: gradiente de iluminacao) - Configuracao 2: Limiarizacao adaptativa + Gaussiano 3x3
 ./cmake-build-debug/pdi_lab --input images/input/m2_challenging_illumination.png \
   --output images/output/chal_adaptive_mask.png \
   --overlay images/output/chal_adaptive_overlay.png \
@@ -75,7 +75,7 @@ Gera uma máscara binária de 1 canal (`CV_8UC1`) contendo exclusivamente `{0, 2
 
 ---
 
-### 2.2. Laboratório M2.2 — Componentes Conexos e Sequência Morfológica (`--operation analyze`)
+### 2.2. Laboratório M2.2 - Componentes Conexos e Sequência Morfológica (`--operation analyze`)
 
 Recebe uma máscara binária (`--input`) e um **prefixo de saída** (`--output`), executando:
 1. Rotulação inicial em conectividade `4` e `8` (excluindo o fundo `0`);

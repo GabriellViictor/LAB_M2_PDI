@@ -1,7 +1,7 @@
 # Declaração de Uso de Inteligência Artificial (`AI_USAGE.md`)
 
 - **Estudante:** Gabriel Victor Garcia Teixeira (`7701594`)
-- **Laboratório:** M2 (M2.1 — Segmentação e Máscara Binária; M2.2 — Componentes Conexos e Sequência Morfológica)
+- **Laboratório:** M2 (M2.1 - Segmentação e Máscara Binária; M2.2 - Componentes Conexos e Sequência Morfológica)
 
 ## Uso de Ferramentas de IA Generativa
 

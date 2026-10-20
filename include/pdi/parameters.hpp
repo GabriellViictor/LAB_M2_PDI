@@ -25,10 +25,10 @@ BorderStrategy parameter_as_border(const CliOptions& options, const std::string&
 
 bool has_parameter(const CliOptions& options, const std::string& name);
 
-// M2.1 — Converte e valida parametros da operacao segment
+// M2.1 - Converte e valida parametros da operacao segment
 SegmentationParams parse_segmentation_params(const CliOptions& options);
 
-// M2.2 — Converte e valida a sequencia morfologica via argumentos de CLI ou --morph-config
+// M2.2 - Converte e valida a sequencia morfologica via argumentos de CLI ou --morph-config
 std::vector<MorphStageConfig> parse_morph_sequence(const CliOptions& options);
 
 } // namespace pdi

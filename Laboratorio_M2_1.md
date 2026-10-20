@@ -1,5 +1,5 @@
-# Processamento de Imagens — 2026-02
-## Laboratório M2.1 — Máscara binária e segmentação
+# Processamento de Imagens - 2026-02
+## Laboratório M2.1 - Máscara binária e segmentação
 
 ### Objetivo
 

@@ -1,4 +1,4 @@
-# Processamento de Imagens — 2026-02
+# Processamento de Imagens - 2026-02
 
 
 
@@ -53,4 +53,4 @@ Em Windows, Linux e macOS, documente como o comando `pdi_lab` é invocado na lin
 - Dependências: versão de OpenCV e pacote de ligação da linguagem identificados no `README.md`; compilação/instalação e teste reprodutíveis sem pastas geradas incluídas na entrega.
 - Relatório: manter seções M2.1 e M2.2, resultados intermediários legíveis, parâmetros completos, limitações e declaração de IA em `AI_USAGE.md`.
 
-Os critérios gerais da rubrica vigente — execução, requisitos, corretude, guardas e análise — continuam aplicáveis. Na M2, a corretude examina a seleção e aplicação apropriada dos métodos, a interpretação dos resultados, a consistência de máscaras, contagens e medidas, e não uma implementação manual do algoritmo do OpenCV. Datas e pesos específicos de cada entrega serão informados no ambiente da disciplina.
+Os critérios gerais da rubrica vigente - execução, requisitos, corretude, guardas e análise - continuam aplicáveis. Na M2, a corretude examina a seleção e aplicação apropriada dos métodos, a interpretação dos resultados, a consistência de máscaras, contagens e medidas, e não uma implementação manual do algoritmo do OpenCV. Datas e pesos específicos de cada entrega serão informados no ambiente da disciplina.

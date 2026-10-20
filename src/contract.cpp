@@ -108,7 +108,7 @@ ValidationResult validate_typed_parameters(const CliOptions& options)
             }
         }
 
-        // M2.1 — Validacao da operacao segment
+        // M2.1 - Validacao da operacao segment
         if (options.operation == "segment") {
             if (is_jpeg_extension(std::filesystem::path(*options.output))) {
                 return {
@@ -119,7 +119,7 @@ ValidationResult validate_typed_parameters(const CliOptions& options)
             (void)parse_segmentation_params(options);
         }
 
-        // M2.2 — Validacao da operacao analyze
+        // M2.2 - Validacao da operacao analyze
         if (options.operation == "analyze") {
             if (has_parameter(options, "connectivity")) {
                 const int conn = parameter_as_int(options, "connectivity");

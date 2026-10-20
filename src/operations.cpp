@@ -21,7 +21,7 @@ namespace pdi {
 namespace {
 
 constexpr std::array<std::string_view, 20> operations {
-    // M1.1 — representação, canais e níveis de cinza
+    // M1.1 - representação, canais e níveis de cinza
     "inspect",
     "copy",
     "channel_b",
@@ -31,24 +31,24 @@ constexpr std::array<std::string_view, 20> operations {
     "grayscale_weighted",
     "quantize",
 
-    // M1.2 — transformações de intensidade
+    // M1.2 - transformações de intensidade
     "brightness",
     "contrast",
     "negative",
     "threshold",
     "histogram",
 
-    // M1.3 — convolução e filtragem espacial
+    // M1.3 - convolução e filtragem espacial
     "convolution",
     "mean_filter",
     "weighted_mean",
     "laplacian",
     "sobel",
 
-    // M2.1 — máscara binária e segmentação
+    // M2.1 - máscara binária e segmentação
     "segment",
 
-    // M2.2 — componentes conexos e sequência morfológica
+    // M2.2 - componentes conexos e sequência morfológica
     "analyze"
 };
 
@@ -206,7 +206,7 @@ ExitCode run_operation(const CliOptions& options)
         return ExitCode::success;
     }
 
-    // M2.1 — Segmentação e geração de máscara binária
+    // M2.1 - Segmentação e geração de máscara binária
     if (options.operation == "segment") {
         cv::Mat input = read_image(*options.input);
         SegmentationParams params = parse_segmentation_params(options);
@@ -234,7 +234,7 @@ ExitCode run_operation(const CliOptions& options)
         return ExitCode::success;
     }
 
-    // M2.2 — Rotulação de componentes conexos e sequência morfológica
+    // M2.2 - Rotulação de componentes conexos e sequência morfológica
     if (options.operation == "analyze") {
         cv::Mat raw_input = read_image(*options.input);
         cv::Mat initial_mask = ensureBinaryMask(raw_input);

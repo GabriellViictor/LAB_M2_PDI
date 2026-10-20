@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Se você utilizar este projeto-base em atividades acadêmicas, materiais didáticos ou trabalhos derivados, cite o software usando os metadados abaixo."
 type: software
-title: "PDI Template — Projetos-base para os Laboratórios M1 de Processamento de Imagens"
+title: "PDI Template - Projetos-base para os Laboratórios M1 de Processamento de Imagens"
 authors:
   - family-names: "Lopes"
     given-names: "Marcelo Dornbusch"

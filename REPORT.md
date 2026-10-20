@@ -1,20 +1,20 @@
-# Relatório Técnico Consolidado — Laboratórios M2.1 e M2.2
+# Relatório Técnico Consolidado - Laboratórios M2.1 e M2.2
 
 **Estudante:** Gabriel Victor Garcia Teixeira (`7701594`)  
 **Disciplina:** Processamento Digital de Imagens (2026-02)
 
 ---
 
-## Parte 1 — Laboratório M2.1: Máscara Binária e Segmentação
+## Parte 1 - Laboratório M2.1: Máscara Binária e Segmentação
 
 ### 1.1. Definição do Alvo e Conjunto de Imagens
 - **Objeto de interesse:** Discos circulares claros (`255` na máscara binária) sobre fundo escuro (`0`).
-- **Imagem 1 — Condições favoráveis (`images/input/m2_favorable_objects.png`, $260 \times 200$):** 4 objetos circulares claros bem contrastados sobre fundo escuro uniforme, contendo 3 pontos isolados de ruído de alta intensidade ($1 \times 1$ px) no fundo e 2 pequenos furos escuros no interior dos discos.
-- **Imagem 2 — Condições desafiadoras (`images/input/m2_challenging_illumination.png`, $260 \times 200$):** 5 objetos circulares distribuídos sobre um fundo com forte gradiente horizontal de iluminação (intensidade do fundo variando de $20$ à esquerda até $165$ à direita), além de dois objetos separados por apenas $2\text{ px}$ na região mais clara.
+- **Imagem 1 - Condições favoráveis (`images/input/m2_favorable_objects.png`, $260 \times 200$):** 4 objetos circulares claros bem contrastados sobre fundo escuro uniforme, contendo 3 pontos isolados de ruído de alta intensidade ($1 \times 1$ px) no fundo e 2 pequenos furos escuros no interior dos discos.
+- **Imagem 2 - Condições desafiadoras (`images/input/m2_challenging_illumination.png`, $260 \times 200$):** 5 objetos circulares distribuídos sobre um fundo com forte gradiente horizontal de iluminação (intensidade do fundo variando de $20$ à esquerda até $165$ à direita), além de dois objetos separados por apenas $2\text{ px}$ na região mais clara.
 
 ### 1.2. Configurações Comparadas e Pré-processamento
-1. **Configuração 1 — Limiar Fixo (`--method fixed --threshold 120`):** Conversão para níveis de cinza de 8 bits e binarização direta ($g(x,y) = 255$ se $f(x,y) \ge 120$, caso contrário $0$), sem pré-processamento.
-2. **Configuração 2 — Limiarização Adaptativa Gaussiana (`--method adaptive`):**
+1. **Configuração 1 - Limiar Fixo (`--method fixed --threshold 120`):** Conversão para níveis de cinza de 8 bits e binarização direta ($g(x,y) = 255$ se $f(x,y) \ge 120$, caso contrário $0$), sem pré-processamento.
+2. **Configuração 2 - Limiarização Adaptativa Gaussiana (`--method adaptive`):**
    - Na Imagem 1: `--block-size 31 --c -15 --blur 0`.
    - Na Imagem 2: `--block-size 35 --c -15 --blur 3` (pré-processamento com filtro Gaussiano $3 \times 3$ para atenuar variações pontuais antes do limiar local).
 
@@ -39,7 +39,7 @@
 
 ---
 
-## Parte 2 — Laboratório M2.2: Componentes Conexos e Sequência Morfológica
+## Parte 2 - Laboratório M2.2: Componentes Conexos e Sequência Morfológica
 
 ### 2.1. Comparação entre Conectividade 4 e Conectividade 8
 A rotulação inicial foi executada com `cv::connectedComponentsWithStats` para conectividade `4` e `8` na mesma máscara:
@@ -48,9 +48,9 @@ A rotulação inicial foi executada com `cv::connectedComponentsWithStats` para 
 
 ### 2.2. Sequência Morfológica Justificada
 Foi aplicada a sequência de **duas operações** (`config/morph_default.txt`):
-1. **Estágio 1 — Abertura (`open`, elemento estruturante `ellipse` $3 \times 3$, `1` iteração):**
+1. **Estágio 1 - Abertura (`open`, elemento estruturante `ellipse` $3 \times 3$, `1` iteração):**
    - **Problema visado:** Eliminar pequenos falsos positivos isolados (ruído impulsivo de $1 \times 1$ a $2 \times 2$ pixels no fundo) sem deslocar os contornos principais.
-2. **Estágio 2 — Fechamento (`close`, elemento estruturante `ellipse` $5 \times 5$, `1` iteração):**
+2. **Estágio 2 - Fechamento (`close`, elemento estruturante `ellipse` $5 \times 5$, `1` iteração):**
    - **Problema visado:** Preencher pequenos furos escuros no interior dos objetos segmentados (falsos negativos internos) e reconectar pequenas falhas de borda.
 
 ### 2.3. Tabela Comparativa Antes e Depois da Sequência Morfológica
@@ -61,7 +61,7 @@ Foi aplicada a sequência de **duas operações** (`config/morph_default.txt`):
 | **Caso 2 (`chal_adaptive_mask.png`)** | 8 | $5$ | $5$ | $2\,559\text{ px}$ | $5$ | $5$ | $2\,557\text{ px}$ |
 
 ### 2.4. Análise de Mudanças e Limitações (Onde Ajuda vs. Efeito Indesejado)
-1. **Caso em que a sequência resolve o problema (Caso 1 — `results/fav`):**
+1. **Caso em que a sequência resolve o problema (Caso 1 - `results/fav`):**
    - Na máscara inicial `fav_fixed_mask.png`, havia **7 componentes brutos** ($4$ discos reais + $3$ ruídos isolados de $1\text{ px}$ cada) e **2 furos internos** nos discos ($9\,021\text{ px}$ no total).
    - O **Estágio 1 (`results/fav_stage1_open.png`)** removeu completamente os $3$ pontos de ruído isolado, reduzindo a contagem bruta de $7$ para $4$ componentes (mesmo sem depender do filtro de área).
    - O **Estágio 2 (`results/fav_stage2_close.png`)** preencheu os furos internos dos discos, elevando a área total de primeiro plano para $9\,028\text{ px}$ e produzindo 4 componentes conexos limpos e coesos em `results/fav_labels.png`.
